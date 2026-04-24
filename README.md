@@ -31,6 +31,110 @@ streamlit run app.py
 
 
 
+## 📁 Project Structure & Responsibilities
+
+This project is organized using a modular architecture to separate concerns and ensure maintainability.
+
+---
+
+### 🧠 agent/
+
+Contains the **core logic of the system**.
+
+#### 📄 agent/agent.py
+- Main brain of the application
+- Implements a **deterministic state machine**
+- Handles:
+  - Conversation flow
+  - State transitions
+  - Context management
+  - Retry logic
+  - Input validation
+- Key methods:
+  - `next()` → entry point for every user input
+  - `_extract_entities()` → parses structured data (account_id, amount, etc.)
+  - `_handle_*()` → handles each state (verification, payment, etc.)
+  - `_response()` → formats output
+
+---
+
+### 🔌 api/
+
+Handles all **external API communication**.
+
+#### 📄 api/client.py
+- Responsible for interacting with external services
+- Functions:
+  - `lookup_account()` → fetch account details
+  - `process_payment()` → processes payment transaction
+- Uses HTTP requests (`requests` library)
+- Includes basic error handling for network failures
+
+---
+
+### ⚙️ utils/
+
+Contains **supporting utilities and shared logic**.
+
+#### 📄 utils/state.py
+- Defines all possible states of the agent
+- Implemented using an Enum
+- Examples:
+  - START
+  - VERIFY_NAME
+  - VERIFY_SECONDARY
+  - SHOW_BALANCE
+  - CARD_FLOW
+  - END
+
+#### 📄 utils/validators.py (if used)
+- Contains reusable validation functions
+- Example:
+  - card validation
+  - amount validation
+
+---
+
+### 🧪 tests/
+
+Contains **test scenarios to validate system behavior**.
+
+#### 📄 tests/test_flows.py
+- Simulates real-world interactions
+- Covers:
+  - Successful payment flow
+  - Verification failure
+  - Zero balance case
+  - Payment failure
+- Helps ensure:
+  - Correct state transitions
+  - Robust error handling
+  - No crashes
+
+---
+
+### 💻 app.py
+
+Streamlit-based UI for interactive testing.
+
+- Provides a chat interface
+- Maintains session state
+- Sends user input to agent
+- Displays responses
+- Used for demonstration purposes
+
+---
+
+### 🖥️ run.py
+
+Command-line interface (CLI) for the agent.
+
+- Allows manual interaction via terminal
+- Useful for quick testing without UI
+- Example:
+
+
+
 ---
 
 ## 🧠 Features
