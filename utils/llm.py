@@ -1,0 +1,21 @@
+from groq import Groq
+import os
+
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+def parse_input(user_input):
+    prompt = f"""
+Extract structured data from this input:
+"{user_input}"
+
+Return JSON with possible fields:
+account_id, amount
+"""
+
+    response = client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0
+    )
+
+    return response.choices[0].message.content

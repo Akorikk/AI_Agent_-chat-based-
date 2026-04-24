@@ -1,6 +1,6 @@
 from agent.agent import Agent
 
-agent = Agent()
+agent = Agent(debug=False)
 
 print(agent.next("hi")["message"])
 
