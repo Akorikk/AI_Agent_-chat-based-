@@ -29,6 +29,16 @@ python -m tests.test_flows
 5. ## 💬 Optional UI (Streamlit)
 streamlit run app.py
 
+6. # Demo Use
+ACC1001
+Nithin Jain
+1990-05-14
+500
+4532015112830366
+Nithin Jain
+123
+12 2027
+
 
 
 ## 📁 Project Structure & Responsibilities
