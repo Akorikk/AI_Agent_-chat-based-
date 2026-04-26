@@ -12,7 +12,7 @@ The agent supports:
 - Error handling and retry limits
 
 ## Note: Future Enhancements
-
+This is a baseline project that can be further enhanced to improve the quality of the AI agent.
 The current system is designed as a reliable and deterministic baseline. Future improvements may include:
 - Integration of LLMs for advanced natural language understanding
 - Enhanced security and fraud detection mechanisms
