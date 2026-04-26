@@ -5,12 +5,19 @@
 ## 📌 Overview
 
 This project implements a **deterministic conversational AI agent** for handling payment collection workflows.
-
 The agent supports:
 - Account lookup
 - Identity verification (strict rules)
 - Payment processing
 - Error handling and retry limits
+
+## Note: Future Enhancements
+
+The current system is designed as a reliable and deterministic baseline. Future improvements may include:
+- Integration of LLMs for advanced natural language understanding
+- Enhanced security and fraud detection mechanisms
+- Persistent storage and logging
+- Deployment-ready architecture with scalable backend services
 
 ---
 
